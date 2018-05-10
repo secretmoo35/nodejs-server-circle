@@ -233,6 +233,7 @@ describe(_model + ' CRUD routes tests', function () {
 
         request(app)
             .post('/api/' + _model)
+            .set('Authorization', 'Bearer ' + token)
             .send(item)
             .expect(400)
             .end(function (err, res) {
@@ -249,6 +250,7 @@ describe(_model + ' CRUD routes tests', function () {
 
         request(app)
             .post('/api/' + _model)
+            .set('Authorization', 'Bearer ' + token)
             .send(item)
             .expect(400)
             .end(function (err, res) {
