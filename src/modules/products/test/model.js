@@ -10,7 +10,8 @@ describe(_model + ' Model save tests', function () {
 
     before(function (done) {
         item = {
-            name: 'name'
+            name: 'name',
+            price: 1
         };
         done();
     });
@@ -25,4 +26,30 @@ describe(_model + ' Model save tests', function () {
             });
         });
     });
+
+    it('should be able to show an error when try to save without name', function (done) {
+        var _item = new Model({
+            name: '',
+            price: 1
+        });
+
+        return _item.save(function (err) {
+            should.exist(err);
+            done();
+        });
+    });
+
+    it('should be able to show an error when try to save without price', function (done) {
+        var _item = new Model({
+            name: 'name',
+            price: null
+        });
+
+        return _item.save(function (err) {
+            should.exist(err);
+            done();
+        });
+    });
+
+
 });
