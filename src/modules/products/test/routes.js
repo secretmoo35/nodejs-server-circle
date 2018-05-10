@@ -92,7 +92,6 @@ describe(_model + ' CRUD routes tests', function () {
         if (err) {
           return done(err);
         }
-        console.log(res);
         var resp = res.body;
         request(app)
           .get('/api/' + _model + '/' + resp.data._id)
