@@ -10,6 +10,9 @@ var ModelSchema = new Schema({
     name: {
         type: String
     },
+    shoptype: {
+        type: String
+    },
     created: {
         type: Date,
         default: Date.now

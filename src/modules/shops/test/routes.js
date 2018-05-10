@@ -16,20 +16,20 @@ describe(_model + ' CRUD routes tests', function () {
     before(function (done) {
         item = {
             shoptype: 'shoptype',
-        foodtype: 'foodtype',
-        shopno: '0894447208',
-        name: '0894447208',
-        tel: '0894447208',
-        address: '14/5',
-        owner: '0894447208',
-        mobile: '0894445555',
-        email: 'shopname@bitebite.com',
-        code: '00001',
-        branchs: [{
-          name: 'Shop Name by branch',
-          tel: '0894447208',
-          address: '14/5',
-        }]
+            foodtype: 'foodtype',
+            shopno: '0894447208',
+            name: '0894447208',
+            tel: '0894447208',
+            address: '14/5',
+            owner: '0894447208',
+            mobile: '0894445555',
+            email: 'shopname@bitebite.com',
+            code: '00001',
+            branchs: [{
+                name: 'Shop Name by branch',
+                tel: '0894447208',
+                address: '14/5',
+            }]
         };
         credentials = {
             username: 'username',
@@ -136,7 +136,8 @@ describe(_model + ' CRUD routes tests', function () {
                 }
                 var resp = res.body;
                 var update = {
-                    name: 'name update'
+                    name: 'name update',
+                    shoptype: 'shoptypeedit'
                 }
                 request(app)
                     .put('/api/' + _model + '/' + resp.data._id)
