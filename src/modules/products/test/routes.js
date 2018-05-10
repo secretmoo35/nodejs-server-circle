@@ -15,8 +15,26 @@ describe(_model + ' CRUD routes tests', function () {
 
     before(function (done) {
         item = {
-            name: 'name',
-            price: 1
+            name: 'Product name',
+        image: 'image',
+        category: {
+          name: 'name cate'
+        },
+        prices: [{
+          name: 'ราคาปกติ',
+          _type: 'normal',
+          price: 50
+        }],
+        submenus: [{
+          _type: 'one',
+          name: 'เส้น',
+          prices: [{
+            name: 'ใหญ่',
+            _type: 'normal',
+            price: 0
+          }]
+        }],
+        typebranch: 'ALL'
         };
         credentials = {
             username: 'username',
@@ -85,6 +103,7 @@ describe(_model + ' CRUD routes tests', function () {
                         var resp = res.body;
                         assert.equal(resp.status, 200);
                         assert.equal(resp.data.name, item.name);
+                        assert.equal(resp.data.image, item.image);
                         done();
                     });
             });
@@ -105,6 +124,7 @@ describe(_model + ' CRUD routes tests', function () {
                 var resp = res.body;
                 assert.equal(resp.status, 200);
                 assert.equal(resp.data.name, item.name);
+                assert.equal(resp.data.image, item.image);
                 done();
             });
 
@@ -137,6 +157,7 @@ describe(_model + ' CRUD routes tests', function () {
                         var resp = res.body;
                         assert.equal(resp.status, 200);
                         assert.equal(resp.data.name, update.name);
+                        assert.equal(resp.data.image, item.image);
                         done();
                     });
             });
