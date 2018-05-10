@@ -11,9 +11,49 @@ var ModelSchema = new Schema({
         type: String,
         required: 'Please fill product name',
     },
-    price: {
-        type: Number,
+    image: {
+        type: String
+    },
+    category: {
+        name: {
+            type: String
+        }
+    },
+    prices: {
         required: 'Please fill product price',
+        type: [{
+            name: {
+                type: String
+            },
+            _type: {
+                type: String
+            },
+            price: {
+                type: Number
+            }
+        }]
+    },
+    submenus: [{
+        _type: {
+            type: String
+        },
+        name: {
+            type: String
+        },
+        prices: [{
+            name: {
+                type: String
+            },
+            _type: {
+                type: String
+            },
+            price: {
+                type: Number
+            }
+        }],
+    }],
+    typebranch: {
+        type: String
     },
     created: {
         type: Date,
