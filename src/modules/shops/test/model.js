@@ -25,4 +25,8 @@ describe(_model + ' Model save tests', function () {
             });
         });
     });
+    it('should 1=1', function(done){
+        should(1).equal(0);
+        done();
+    });
 });
