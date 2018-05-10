@@ -226,6 +226,38 @@ describe(_model + ' CRUD routes tests', function () {
 
     });
 
+    it('should be ' + _model + ' save if no name is provided (status 400)', function (done) {
+
+        item.name = '';
+
+        request(app)
+            .post('/api/' + _model)
+            .send(item)
+            .expect(400)
+            .end(function (err, res) {
+                assert.notEqual(res.body.message.indexOf('Please fill product name'), -1);
+                done();
+            });
+
+    });
+
+    it('should be ' + _model + ' save if no price is provided (status 400)', function (done) {
+
+        item.name = 'name';
+        item.price = null;
+
+        request(app)
+            .post('/api/' + _model)
+            .send(item)
+            .expect(400)
+            .end(function (err, res) {
+                assert.notEqual(res.body.message.indexOf('Please fill product price'), -1);
+                done();
+            });
+
+    });
+
+
     afterEach(function (done) {
         User.remove().exec(function () {
             Model.remove().exec(done);
