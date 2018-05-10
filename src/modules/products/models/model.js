@@ -8,7 +8,13 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var ModelSchema = new Schema({
     name: {
-        type: String
+        type: String,
+        unique: true,
+        required: 'Please fill product name.'
+    },
+    price:{
+        type: Number,
+        required: 'Please fill product price.'        
     },
     created: {
         type: Date,
