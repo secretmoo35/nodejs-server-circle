@@ -15,7 +15,8 @@ describe(_model + ' CRUD routes tests', function () {
 
     before(function (done) {
         item = {
-            name: 'name'
+            name: 'name',
+            price: 1
         };
         credentials = {
             username: 'username',

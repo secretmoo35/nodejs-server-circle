@@ -10,7 +10,8 @@ describe(_model + ' Model save tests', function () {
 
     before(function (done) {
         item = {
-            name: 'name'
+            name: 'name',
+            price: 1
         };
         done();
     });
