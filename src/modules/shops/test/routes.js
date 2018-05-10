@@ -15,7 +15,21 @@ describe(_model + ' CRUD routes tests', function () {
 
     before(function (done) {
         item = {
-            name: 'name'
+            shoptype: 'shoptype',
+        foodtype: 'foodtype',
+        shopno: '0894447208',
+        name: '0894447208',
+        tel: '0894447208',
+        address: '14/5',
+        owner: '0894447208',
+        mobile: '0894445555',
+        email: 'shopname@bitebite.com',
+        code: '00001',
+        branchs: [{
+          name: 'Shop Name by branch',
+          tel: '0894447208',
+          address: '14/5',
+        }]
         };
         credentials = {
             username: 'username',
@@ -83,7 +97,7 @@ describe(_model + ' CRUD routes tests', function () {
                         }
                         var resp = res.body;
                         assert.equal(resp.status, 200);
-                        assert.equal(resp.data.name, item.name);
+                        assert.equal(resp.data.shoptype, item.shoptype);
                         done();
                     });
             });
@@ -103,7 +117,7 @@ describe(_model + ' CRUD routes tests', function () {
                 }
                 var resp = res.body;
                 assert.equal(resp.status, 200);
-                assert.equal(resp.data.name, item.name);
+                assert.equal(resp.data.shoptype, item.shoptype);
                 done();
             });
 
@@ -135,7 +149,7 @@ describe(_model + ' CRUD routes tests', function () {
                         }
                         var resp = res.body;
                         assert.equal(resp.status, 200);
-                        assert.equal(resp.data.name, update.name);
+                        assert.equal(resp.data.shoptype, update.shoptype);
                         done();
                     });
             });
